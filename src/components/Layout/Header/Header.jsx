@@ -57,11 +57,15 @@ const Header = () => {
       <HeaderContent>
         <Logo onClick={() => navigate('/', { replace: true })}>VE</Logo>
         <Nav>
-          <MenuList>
-            <HeaderMenuItem link={'/'} text={'비디오 편집'} />
-            <HeaderMenuItem link={'/image'} text={'이미지 편집'} />
-            <HeaderMenuItem link={'/login'} text={'로그아웃'} />
-          </MenuList>
+          {device === 'small-screen' ? (
+            <SmallMenuIcon />
+          ) : (
+            <MenuList>
+              <HeaderMenuItem link={'/'} text={'비디오 편집'} />
+              <HeaderMenuItem link={'/image'} text={'이미지 편집'} />
+              <HeaderMenuItem link={'/login'} text={'로그아웃'} />
+            </MenuList>
+          )}
         </Nav>
       </HeaderContent>
     </HeaderContainer>

@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { auth } from './firebase';
 import Loading from './components/Loading';
 import ProtectedRoute from './components/Protected-route';
+import ImageEditor from './routes/ImageEditor';
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: '',
         element: <VideoEditor />,
+      },
+      {
+        path: '/image',
+        element: <ImageEditor />,
       },
     ],
   },

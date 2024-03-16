@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import Header from './Header/Header';
+import Footer from './Footer/Footer';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -27,6 +28,7 @@ const Layout = () => {
     <Wrapper>
       <Header />
       <MainContent></MainContent>
+      <Footer />
     </Wrapper>
   );
 };

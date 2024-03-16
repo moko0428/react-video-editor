@@ -32,7 +32,8 @@ const HeaderContent = styled.div`
   justify-content: space-between;
   align-items: center;
 `;
-const Logo = styled.span`
+export const Logo = styled.span`
+  cursor: pointer;
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   font-size: 40px;
   padding-bottom: 10px;

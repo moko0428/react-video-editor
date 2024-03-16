@@ -8,11 +8,16 @@ import reset from 'styled-reset';
 import { useEffect, useState } from 'react';
 import { auth } from './firebase';
 import Loading from './components/Loading';
+import ProtectedRoute from './components/Protected-route';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <ProtectedRoute>
+        <Layout />
+      </ProtectedRoute>
+    ),
     children: [
       {
         path: '',
@@ -32,7 +37,9 @@ const router = createBrowserRouter([
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
-  
+  body{
+    background-color: aliceblue;
+  }
 `;
 function App() {
   const [isLoading, setLoading] = useState(true);

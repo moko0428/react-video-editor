@@ -11,6 +11,7 @@ import Loading from './components/Loading';
 import ProtectedRoute from './components/Protected-route';
 import ImageEditor from './routes/ImageEditor';
 import './App.css';
+import './fonts/Font.css';
 
 const router = createBrowserRouter([
   {
@@ -47,8 +48,10 @@ const GlobalStyles = createGlobalStyle`
     --black:#383838;
     --main:#44abef;
   }
+  
   body{
     background-color: aliceblue;
+    font-family: "메이플스토리";
   }
 `;
 function App() {

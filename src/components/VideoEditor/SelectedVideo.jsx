@@ -17,7 +17,7 @@ const Button = styled.button`
   line-height: normal;
   text-align: center;
 
-  background-color: #44abef;
+  background-color: var(--main);
   color: white;
 
   font-size: 16px;
@@ -26,12 +26,12 @@ const Button = styled.button`
   &:hover,
   &:focus,
   &:active {
-    background-color: #383838;
+    background-color: var(--black);
     border: none;
   }
 `;
 
-const SelectedVideo = ({ file, text, setVideoFile }) => {
+const SelectedVideo = ({ file, text, setFile }) => {
   return (
     <Container>
       <Input
@@ -39,7 +39,7 @@ const SelectedVideo = ({ file, text, setVideoFile }) => {
         accept="video/*"
         ref={file}
         onChange={(e) => {
-          setVideoFile(e.target.files[0]);
+          setFile(e.target.files[0]);
         }}
       />
       <Button

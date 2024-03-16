@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const ImgLink = styled.a`
-  color: black;
+  color: var(--black);
   text-decoration-line: none;
   margin-left: 5px;
   margin-right: 5px;

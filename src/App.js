@@ -43,6 +43,10 @@ const router = createBrowserRouter([
 
 const GlobalStyles = createGlobalStyle`
   ${reset}
+  :root{
+    --black:#383838;
+    --main:#44abef;
+  }
   body{
     background-color: aliceblue;
   }

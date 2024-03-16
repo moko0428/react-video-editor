@@ -12,7 +12,7 @@ const HeaderMenuItem = (props) => {
     <Item
       to={props.link}
       style={({ isActive }) => {
-        return { color: isActive ? '#44ABEF' : 'black' };
+        return { color: isActive ? `var(${'--main'})` : 'black' };
       }}
     >
       {props.text}

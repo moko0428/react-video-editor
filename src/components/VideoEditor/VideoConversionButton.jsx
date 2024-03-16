@@ -4,7 +4,7 @@ import { readFileAsBase64, sliderValueToVideoTime } from '../../utils/utils';
 import styled from 'styled-components';
 
 const VideoButton = styled.button`
-  background-color: #44abef;
+  background-color: var(--main);
   color: white;
   font-size: 16px;
   font-weight: 700;
@@ -24,8 +24,8 @@ const VideoButton = styled.button`
   &:hover,
   &:focus,
   &:active {
-    background: #383838 !important;
-    border: none !important;
+    background: var(--black);
+    border: none;
   }
 `;
 

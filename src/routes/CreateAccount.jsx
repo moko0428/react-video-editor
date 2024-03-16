@@ -42,11 +42,11 @@ export const Input = styled.input`
 
   &[type='submit'] {
     cursor: pointer;
-    background-color: #44abef;
+    background-color: var(--main);
     color: white;
 
     &:hover {
-      opacity: 0.8;
+      background-color: var(--black);
     }
   }
 `;
@@ -60,9 +60,6 @@ export const Error = styled.span`
 
 export const Switcher = styled.span`
   margin-top: 20px;
-  a {
-    color: black;
-  }
 `;
 
 export const errors = {

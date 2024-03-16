@@ -21,7 +21,7 @@ const MenuItem = styled(NavLink)`
   color: black;
 
   &:hover {
-    background-color: #44abef;
+    background-color: var(--main);
   }
 `;
 

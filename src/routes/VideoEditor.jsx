@@ -6,9 +6,10 @@ import VideoConversionButton from '../components/VideoEditor/VideoConversionButt
 import { createFFmpeg } from '@ffmpeg/ffmpeg';
 import { sliderValueToVideoTime } from '../utils/utils';
 import { VideoPlayer } from '../components/VideoEditor/VideoPlayer';
+import useDeviceType from '../hooks/useDeviceType';
 
 const Container = styled.div`
-  width: 100%;
+  width: ${(props) => props.width};
   height: inherit;
   padding-right: 40px;
   display: flex;
@@ -52,18 +53,21 @@ const Column = styled.div`
   margin-bottom: 20px;
 `;
 
-const HideWrapper = styled.div``;
+const HideWrapper = styled.div`
+  display: flex;
+  flex-direction: ${(props) => props.direction};
+`;
 
 const ffmpeg = createFFmpeg({ log: true });
 
-const VideoEditor = () => {
+const VideoEditor = (props) => {
   const [videoFile, setVideoFile] = useState();
   const [ffmpegLoaded, setFFmpegLoaded] = useState(false);
   const [processing, setProcessing] = useState(false);
   const [videoPlayerState, setVideoPlayerState] = useState();
   const [videoPlayer, setVideoPlayer] = useState();
   const [sliderValues, setSliderValues] = useState([0, 100]);
-
+  const device = useDeviceType();
   const uploadFile = useRef('');
   useEffect(() => {
     const title = document.getElementsByTagName('title')[0];
@@ -111,10 +115,10 @@ const VideoEditor = () => {
     setSliderValues([0, 100]);
   }, [videoFile]);
 
-  if (!ffmpegLoaded) return <div>loading...</div>;
+  if (!ffmpegLoaded) return <div>정보를 불러오는 중...</div>;
 
   return (
-    <Container>
+    <Container width={device === 'small-screen' ? '100%' : '50%'}>
       <Content>
         <VideoReloadWrapper>
           <Title>비디오 편집하기</Title>
@@ -157,7 +161,9 @@ const VideoEditor = () => {
                   onSliderChange={([min, max]) => setSliderValues([min, max])}
                 />
               </Section>
-              <HideWrapper>
+              <HideWrapper
+                direction={device === 'small-screen' ? 'column' : 'row'}
+              >
                 <VideoConversionButton />
               </HideWrapper>
             </>

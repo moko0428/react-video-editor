@@ -7,8 +7,7 @@ const Load = styled.div`
   justify-content: center;
   align-items: center;
 
-  background-color: rgba(0, 0, 0, 0.2);
-  font-size: 60px;
+  font-size: 40px;
 `;
 
 const Loading = () => {

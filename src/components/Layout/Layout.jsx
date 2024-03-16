@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
+import { Outlet } from 'react-router-dom';
 
 const Wrapper = styled.div`
   height: 100%;
@@ -27,7 +28,9 @@ const Layout = () => {
   return (
     <Wrapper>
       <Header />
-      <MainContent></MainContent>
+      <MainContent>
+        <Outlet />
+      </MainContent>
       <Footer />
     </Wrapper>
   );

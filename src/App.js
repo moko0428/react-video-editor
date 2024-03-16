@@ -10,6 +10,7 @@ import { auth } from './firebase';
 import Loading from './components/Loading';
 import ProtectedRoute from './components/Protected-route';
 import ImageEditor from './routes/ImageEditor';
+import './App.css';
 
 const router = createBrowserRouter([
   {
